@@ -87,11 +87,11 @@ spans.forEach((e) => {
       const hours = now.getHours();
       const minutes = now.getMinutes();
       const seconds = now.getSeconds();
-      if (hours == 0 && minutes == 0 && seconds == 0) {
+      if (hours == 0 && minutes == 1 && seconds == 0) {
         getData("Cairo", date);
       }
     }
-    setInterval(amr, 1 * 1000);
+    setInterval(amr,  1000);
   }
 });
 
@@ -121,7 +121,7 @@ function select() {
     const hours = now.getHours();
     const minutes = now.getMinutes();
     const seconds = now.getSeconds();
-    if (hours == 0 && minutes == 0 && seconds == 0) {
+    if (hours == 0 && minutes == 1 && seconds == 0) {
       getData(localStorage.getItem("Iso"), date);
     }
   }
@@ -146,7 +146,7 @@ change.onclick = function (e) {
 };
 
 let btn = document.querySelector(".update button");
-if (localStorage.length > 0 && !localStorage.getItem("new3 Seen")) {
+if (localStorage.length > 0 && !localStorage.getItem("new4 Seen")) {
   let parent = document.createElement("div");
   parent.className = "update";
   let btn = document.createElement("button");
@@ -158,6 +158,6 @@ if (localStorage.length > 0 && !localStorage.getItem("new3 Seen")) {
     localStorage.clear();
     btn.remove();
     location.reload();
-    localStorage.setItem("new3 Seen", "true");
+    localStorage.setItem("new4 Seen", "true");
   };
 }
