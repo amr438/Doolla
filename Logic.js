@@ -24,7 +24,6 @@ function getData(City, Date) {
       let timinges = respons.data.data.timings;
       // Date
       let dateOfDay = respons.data.data.date.readable;
-      console.log(dateOfDay);
       // Add Date To Local Storage
       localStorage.setItem("Date", dateOfDay);
       if (localStorage.getItem("Date")) {
