@@ -147,7 +147,7 @@ change.onclick = function (e) {
 };
 
 let btn = document.querySelector(".update button");
-if (localStorage.length > 0 && !localStorage.getItem("new2 Seen")) {
+if (localStorage.length > 0 && !localStorage.getItem("new3 Seen")) {
   let parent = document.createElement("div");
   parent.className = "update";
   let btn = document.createElement("button");
@@ -159,6 +159,6 @@ if (localStorage.length > 0 && !localStorage.getItem("new2 Seen")) {
     localStorage.clear();
     btn.remove();
     location.reload();
-    localStorage.setItem("new2 Seen", "true");
+    localStorage.setItem("new3 Seen", "true");
   };
 }
