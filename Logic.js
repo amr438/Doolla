@@ -81,17 +81,7 @@ spans.forEach((e) => {
     e.textContent = localStorage.getItem(e.className);
   }
   if (!localStorage.getItem(e.className)) {
-    getData("Cairo", date);
-    function amr() {
-      const now = new Date();
-      const hours = now.getHours();
-      const minutes = now.getMinutes();
-      const seconds = now.getSeconds();
-      if (hours == 0 && minutes == 1 && seconds == 0) {
-        getData("Cairo", date);
-      }
-    }
-    setInterval(amr,  1000);
+    setInterval(getData("Cairo", date),  1000);
   }
 });
 
@@ -100,33 +90,22 @@ function select() {
   mohafazat.forEach((e) => {
     e.addEventListener("click", () => {
       getData(e.className, date);
-      // getData(e.className , date)
-      // City
       localStorage.setItem("Iso", e.className);
       localStorage.setItem("City", e.textContent);
+      setInterval(getData("iso", date),  1000);
 
       if (localStorage.getItem("City")) {
         let city = document.querySelector(".city");
         city.textContent = localStorage.getItem("City");
       }
     });
-    // }setInterval(checkTime , 2 * 1000)
-  });
+  });}
   if (localStorage.getItem("City")) {
     let city = document.querySelector(".city");
     city.textContent = localStorage.getItem("City");
   }
-  function checkTime() {
-    const now = new Date();
-    const hours = now.getHours();
-    const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
-    if (hours == 0 && minutes == 1 && seconds == 0) {
-      getData(localStorage.getItem("Iso"), date);
-    }
-  }
-  setInterval(checkTime, 1 * 1000);
-}
+
+
 if (localStorage.getItem("City")) {
   let city = document.querySelector(".city");
   city.textContent = localStorage.getItem("City");
