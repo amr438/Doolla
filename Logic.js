@@ -126,7 +126,7 @@ change.onclick = function (e) {
 };
 
 let btn = document.querySelector(".update button");
-if (localStorage.length > 0 && !localStorage.getItem("new10 Seen")) {
+if (localStorage.length > 0 && !localStorage.getItem("new100 Seen")) {
   let parent = document.createElement("div");
   parent.className = "update";
   let btn = document.createElement("button");
@@ -138,7 +138,7 @@ if (localStorage.length > 0 && !localStorage.getItem("new10 Seen")) {
     localStorage.clear();
     btn.remove();
     location.reload();
-    localStorage.setItem("new10 Seen", "true");
+    localStorage.setItem("new100 Seen", "true");
   };
 }
 // If hour Time Equal 15 Call Data Again For Update Date And Time
