@@ -9,7 +9,7 @@ function convertTo12HourFormat(time24) {
   const hours12 = hours24 % 12 || 12;
   // تنسيق الوقت بالتنسيق 12 ساعة
   return `${hours12}:${minutes.toString().padStart(2, "0")} ${period}`;
-}   
+}
 // Date OF Day
 let date = new Date();
 let spans = document.querySelectorAll(".box span");
@@ -81,10 +81,10 @@ spans.forEach((e) => {
     e.textContent = localStorage.getItem(e.className);
   }
   if (!localStorage.getItem(e.className)) {
-    setInterval(function() {
-      getData("Cairo", date)
-      console.log("amr")
-    },  1000);
+    setInterval(function () {
+      getData("Cairo", date);
+      console.log("amr");
+    }, 1000);
   }
 });
 
@@ -92,7 +92,7 @@ function select() {
   let mohafazat = document.querySelectorAll(".change p");
   mohafazat.forEach((e) => {
     e.addEventListener("click", () => {
-      getData(e.className, date)
+      getData(e.className, date);
       localStorage.setItem("Iso", e.className);
       localStorage.setItem("City", e.textContent);
       if (localStorage.getItem("City")) {
@@ -100,12 +100,12 @@ function select() {
         city.textContent = localStorage.getItem("City");
       }
     });
-  });}
-  if (localStorage.getItem("City")) {
-    let city = document.querySelector(".city");
-    city.textContent = localStorage.getItem("City");
-  }
-
+  });
+}
+if (localStorage.getItem("City")) {
+  let city = document.querySelector(".city");
+  city.textContent = localStorage.getItem("City");
+}
 
 if (localStorage.getItem("City")) {
   let city = document.querySelector(".city");
@@ -142,14 +142,13 @@ if (localStorage.length > 0 && !localStorage.getItem("new10 Seen")) {
   };
 }
 // If hour Time Equal 15 Call Data Again For Update Date And Time
-function checkTime () {
-  const now = new Date()
-  const hours = now.getHours()
-  const minutes = now.getMinutes()
-  const seconds =  now.getSeconds()
-  if (hours == 1 && minutes == 1 && seconds == 1) {
-    getData("Cairo" , date)
+function checkTime() {
+  const now = new Date();
+  const hours = now.getHours();
+  const minutes = now.getMinutes();
+  const seconds = now.getSeconds();
+  if (hours == 0 && minutes == 0 && seconds == 0) {
+    getData("Cairo", date);
   }
-  
 }
-setInterval(checkTime , 1000)
+setInterval(checkTime, 1000);
