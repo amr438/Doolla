@@ -68,6 +68,7 @@ function getData(City, Date) {
       alert();
     });
 }
+getData("Cairo",date)
 if (localStorage.getItem("WeekDay")) {
   let day = document.querySelector(".day");
   day.textContent = localStorage.getItem("WeekDay");
@@ -92,7 +93,7 @@ function select() {
   let mohafazat = document.querySelectorAll(".change p");
   mohafazat.forEach((e) => {
     e.addEventListener("click", () => {
-      getData(e.className, date);
+      setInterval(getData(e.className, date),1000)
       localStorage.setItem("Iso", e.className);
       localStorage.setItem("City", e.textContent);
       if (localStorage.getItem("City")) {
@@ -142,13 +143,5 @@ if (localStorage.length > 0 && !localStorage.getItem("new100 Seen")) {
   };
 }
 // If hour Time Equal 15 Call Data Again For Update Date And Time
-function checkTime() {
-  const now = new Date();
-  const hours = now.getHours();
-  const minutes = now.getMinutes();
-  const seconds = now.getSeconds();
-  if (hours == 0 && minutes == 0 && seconds == 0) {
-    getData("Cairo", date);
-  }
-}
-setInterval(checkTime, 1000);
+
+
