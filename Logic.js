@@ -68,7 +68,6 @@ function getData(City, Date) {
       alert();
     });
 }
-getData("Cairo",date)
 if (localStorage.getItem("WeekDay")) {
   let day = document.querySelector(".day");
   day.textContent = localStorage.getItem("WeekDay");
