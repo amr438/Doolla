@@ -1,3 +1,12 @@
+let date = new Date();
+function Check () {
+  if (localStorage.getItem("Iso")) {
+    getData(localStorage.getItem("Iso"), date)
+  }else {
+    getData("Cairo" , date)
+  }
+}Check()
+
 let ddate = new Date();
 function convertTo12HourFormat(time24) {
   // تقسيم الوقت إلى الساعات والدقائق
@@ -11,7 +20,7 @@ function convertTo12HourFormat(time24) {
   return `${hours12}:${minutes.toString().padStart(2, "0")} ${period}`;
 }
 // Date OF Day
-let date = new Date();
+
 let spans = document.querySelectorAll(".box span");
 // GET Data
 function getData(City, Date) {
